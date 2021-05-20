@@ -1,0 +1,58 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.header__logo {
+    height: 24px;
+    object-fit: contain;
+    margin-left: 1rem;
+}
+
+.header__right {
+   display: flex;
+   align-items: center;
+}
+.header__center {
+    display: flex;
+    align-items: center;
+    
+    width: 40%;
+}
+.header__input{
+    border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-right: 10px;
+}
+.header__input > input {
+    flex: 1;
+    border: none;
+}
+.header__input > button {
+    width: 12%;
+    border: none;
+    border-left: 1px solid lightgray;
+    align-content: center;
+    background-color: #fafafa;
+}
+.header__search {
+    height: 50% !important;
+    
+    color: gray
+    
+}
+.header__left {
+    display: flex;
+    align-items: center;
+}
+.header__icons {
+    margin-right: 10px;
+}
