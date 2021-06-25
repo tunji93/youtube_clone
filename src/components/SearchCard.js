@@ -1,71 +1,11 @@
-import React from 'react'
-import  '../Styles/_Videocard.scss'
-
-const VideoCard = () => {
-    return (
-        <div>
-            videocard
-        </div>
-    )
-}
-
-export default VideoCard
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect} from 'react'
 import TimeAgo from 'react-timeago'
 import Avatar from '@material-ui/core/Avatar';
 import {Link} from 'react-router-dom'
-import '../styles/videocard.css'
+import '../styles/searchcard.css'
 import {numFormatter, viewsFormatter} from './functions/functions'
 
-const VideoCard = ({image,title,channel, views, timestamp, channelId}) => {
+const SearchCard = ({image,title,channel, views, timestamp, channelId}) => {
 
     const[url, setUrl] = useState('')
 
@@ -128,8 +68,4 @@ useEffect(()=> {
     )
 }
 
-export default VideoCard */
-
-
-
-
+export default SearchCard

@@ -1,4 +1,32 @@
 import React from 'react'
+
+const Sidebar = () => {
+    return (
+        <div>
+            sidebar
+        </div>
+    )
+}
+
+export default Sidebar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React from 'react'
 import SideBarRows from './SideBarRows'
 import '../styles/sidebar.css'
 import HomeIcon from '@material-ui/icons/Home';
@@ -32,4 +60,4 @@ const Sidebar = ()=> {
     )
 }
 
-export default Sidebar
+export default Sidebar */

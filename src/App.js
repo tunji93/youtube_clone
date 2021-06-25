@@ -1,5 +1,41 @@
+import {Container} from 'react-bootstrap'
+import React from 'react'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Homepage from './pages/Homepage'
 
-import './App.css';
+const App = () => {
+  return (
+    <>
+      <Header />
+      <div className = "app_container">
+        <Sidebar />
+        <Container fluid className="app_main">
+          <Homepage />
+        </Container>
+      </div>
+
+      
+    </>
+  )
+}
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import './App.css';
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
@@ -15,7 +51,7 @@ function App() {
         <div className="app__main">
             <Sidebar />
             <Switch>
-              <Route path="/">
+              <Route  exact path="/">
                 <Homepage/>
               </Route>
               <Route path="/search">
@@ -33,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; */

@@ -1,4 +1,40 @@
 import React from 'react'
+
+const Header = () => {
+    return (
+        <div>
+            Header
+        </div>
+    )
+}
+
+export default Header
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import React from 'react'
 import '../styles/header.css'
 import MenuIcon from '@material-ui/icons/Menu'
 import VideoCallIcon from '@material-ui/icons/VideoCall';
@@ -7,6 +43,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import SearchIcon from '@material-ui/icons/Search';
 import MicIcon from '@material-ui/icons/Mic';
 import Avatar from '@material-ui/core/Avatar';
+
 
 const Header = () => {
     return (
@@ -34,5 +71,5 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header */
 
