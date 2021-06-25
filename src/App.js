@@ -3,14 +3,15 @@ import React from 'react'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Homepage from './pages/Homepage'
+import './Styles/_App.scss'
 
 const App = () => {
   return (
     <>
       <Header />
-      <div className = "app_container">
+      <div className = "app__container border border-info">
         <Sidebar />
-        <Container fluid className="app_main">
+        <Container fluid className="app__main border border-warning">
           <Homepage />
         </Container>
       </div>
