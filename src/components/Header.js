@@ -5,10 +5,12 @@ import { AiOutlineSearch  } from "react-icons/ai"
 import '../Styles/_Header.scss'
 
 
-const Header = () => {
+const Header = ({handleSidebar}) => {
+
+    
     return (
         <div className="border border-dark header">
-            <FaBars className="header__menu" size={26}/>
+            <FaBars onClick={ ()=>{handleSidebar()}} className="header__menu" size={26}/>
             <img src="https://pngimg.com/uploads/youtube/youtube_PNG102354.png" alt="youtube logo" className="header__logo"/>
             <form>
                 <input type="text" placeholder="Search" />
