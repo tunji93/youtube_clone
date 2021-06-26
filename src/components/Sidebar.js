@@ -12,9 +12,9 @@ import {
 from
 "react-icons/md"
 
-const Sidebar = ({display}) => {
+const Sidebar = ({display, handleSidebar}) => {
     return (
-        <nav className={display? "sidebar open" : "sidebar"}>
+        <nav className={display? "sidebar open" : "sidebar"} onClick={()=> handleSidebar()}>
             <li>
                 <MdHome size={23}/>
                 <span>Home</span>
