@@ -1,10 +1,31 @@
 import React from 'react'
 import  '../Styles/_Videocard.scss'
+import { AiFillEye  } from "react-icons/ai"
 
 const VideoCard = () => {
     return (
-        <div>
-            videocard
+        <div className="video">
+            <div className="video__top">
+                <img src="https://pngimg.com/uploads/youtube/youtube_PNG102354.png" alt="thumbnail" />
+                <span>02:45</span>
+            </div>
+            <div className="video__title">
+                Broda shaggy is a very funny commedian
+            </div>
+            <div className="video__details">
+                <span>
+                    <AiFillEye/> 100k views •
+                </span>
+                <span>
+                    17 days ago
+                </span>
+            </div>
+            <div className="video__channel">
+                <img src="https://pngimg.com/uploads/youtube/youtube_PNG102354.png" alt="channel" />
+                <p>actions and consequences</p>
+            </div>
+
+            
         </div>
     )
 }
