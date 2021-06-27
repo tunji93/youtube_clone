@@ -1,5 +1,6 @@
 import {Container} from 'react-bootstrap'
 import React, {useState} from 'react'
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Homepage from './pages/Homepage'
@@ -18,7 +19,23 @@ const App = () => {
       <div className = "app__container border border-info">
         <Sidebar display={toggleSidebar} handleSidebar={handleSidebar} />
         <Container fluid className="app__main border border-warning">
-          <Homepage />
+          <Router>
+            <Switch>
+              <Route  exact path="/">
+                <Homepage/>
+              </Route>
+              <Route path="/search">
+                <Searchpage/>
+              </Route>
+              <Route path="/search/:id">
+                <Viewspage/>
+              </Route>
+              <Route>
+                  <Redirect to='/' />
+              </Route>
+
+            </Switch>
+          </Router>
         </Container>
       </div>
 
