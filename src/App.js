@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Homepage from './pages/Homepage'
+import Searchpage from './pages/Searchpage'
+import Viewpage from './pages/Viewpage'
 import './Styles/_App.scss'
 
 const App = () => {
@@ -28,7 +30,7 @@ const App = () => {
                 <Searchpage/>
               </Route>
               <Route path="/search/:id">
-                <Viewspage/>
+                <Viewpage/>
               </Route>
               <Route>
                   <Redirect to='/' />

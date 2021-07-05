@@ -1,16 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import  '../Styles/_Videocard.scss'
 import { AiFillEye  } from "react-icons/ai"
+import axios from 'axios'
+import { baseUrl, videoDetailsEndPoint } from '../Api'
 
-const VideoCard = () => {
+const VideoCard = ({video}) => {
+    const {
+        id,
+        snippet:{
+            channelId,
+            channelTitle,
+            title,
+            publishedAt,
+            thumbnails: {medium}
+        }
+    } = video
+    useEffect(()=> {
+        const fetchItems = async() => {
+            const {data:{items}} = await axios(`${baseUrl}${videoDetailsEndPoint}id=${id}&key=${process.env.REACT_APP_API_KEY_1}`)
+            
+        }
+
+        fetchItems()    
+    }, [id])
     return (
         <div className="video">
             <div className="video__top">
-                <img src="https://pngimg.com/uploads/youtube/youtube_PNG102354.png" alt="thumbnail" />
+                <img src={medium.url} alt="thumbnail" />
                 <span>02:45</span>
             </div>
             <div className="video__title">
-                Broda shaggy is a very funny commedian
+                title
             </div>
             <div className="video__details">
                 <span>

@@ -1,4 +1,21 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
+
+const Search = () => {
+    return (
+        <div>
+            Search
+        </div>
+    )
+}
+
+export default Search
+
+
+
+
+
+
+/* import React,{useState, useEffect} from 'react'
 import '../styles/search.css'
 import SearchCard from './SearchCard'
 const Search = () => {
@@ -45,4 +62,4 @@ const Search = () => {
     )
 }
 
-export default Search
+export default Search */

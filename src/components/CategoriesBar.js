@@ -5,10 +5,11 @@ import  '../Styles/_CategoriesBar.scss'
 
 
 const CategoriesBar = () => {
-    const [selected, setSelected] = useState("")
+    const [selected, setSelected] = useState("All")
 
     const handleClick = (value)=> setSelected(value)
     const list = [
+        "All",
         "Coding",
         "Vue",
         "React",
