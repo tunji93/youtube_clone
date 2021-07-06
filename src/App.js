@@ -18,9 +18,9 @@ const App = () => {
   return (
     <>
       <Header handleSidebar={handleSidebar}/>
-      <div className = "app__container border border-info">
+      <div className = "app__container">
         <Sidebar display={toggleSidebar} handleSidebar={handleSidebar} />
-        <Container fluid className="app__main border border-warning">
+        <Container fluid className="app__main">
           <Router>
             <Switch>
               <Route  exact path="/">

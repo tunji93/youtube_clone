@@ -1,11 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import  '../Styles/_Videocard.scss'
 import { AiFillEye  } from "react-icons/ai"
 import axios from 'axios'
-import { baseUrl, videoDetailsEndPoint } from '../Api'
+import moment from 'moment'
+import numeral from 'numeral'
+import { baseUrl, channelEndPoint, videoDetailsEndPoint } from '../Api'
 
 const VideoCard = ({video}) => {
-    const {
+
+    const [views, setViews] = useState(null)
+    const [duration, setDuration] = useState(null)
+    const [channelImage, setChannelImage] = useState(null)
+
+    const seconds = moment.duration(duration).asSeconds()
+    const duration_ = moment.utc(seconds*1000).format('ms:ss')
+
+    const views_ = numeral(views).format('0.a')
+    
+    
+    
+    const{
         id,
         snippet:{
             channelId,
@@ -15,34 +29,55 @@ const VideoCard = ({video}) => {
             thumbnails: {medium}
         }
     } = video
+
     useEffect(()=> {
         const fetchItems = async() => {
             const {data:{items}} = await axios(`${baseUrl}${videoDetailsEndPoint}id=${id}&key=${process.env.REACT_APP_API_KEY_1}`)
+            console.log(items)
+            const[data] = items
+            
+            const{contentDetails:{duration}, statistics:{viewCount}} = data
+            setDuration(duration)
+            setViews(viewCount)
             
         }
 
         fetchItems()    
     }, [id])
+    
+    
+    useEffect(()=> {
+        const fetchChannel = async() => {
+            const {data:{items}}= await axios(`${baseUrl}${channelEndPoint}id=${channelId}&key=${process.env.REACT_APP_API_KEY_1}`)
+            const[data] = items
+            const{snippet:{thumbnails:{default:{url}}}} = data
+            setChannelImage(url)
+            
+            
+        }
+
+        fetchChannel()    
+    }, [channelId])
     return (
         <div className="video">
             <div className="video__top">
                 <img src={medium.url} alt="thumbnail" />
-                <span>02:45</span>
+                <span>{duration_}</span>
             </div>
             <div className="video__title">
-                title
+                {title}
             </div>
             <div className="video__details">
                 <span>
-                    <AiFillEye/> 100k views •
+                    <AiFillEye/> {views_} views •
                 </span>
                 <span>
-                    17 days ago
+                    {moment(publishedAt).fromNow()}
                 </span>
             </div>
             <div className="video__channel">
-                <img src="https://pngimg.com/uploads/youtube/youtube_PNG102354.png" alt="channel" />
-                <p>actions and consequences</p>
+                <img src={channelImage} alt="channel" />
+                <p>{channelTitle}</p>
             </div>
 
             
