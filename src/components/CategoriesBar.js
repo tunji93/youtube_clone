@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import { useDispatch } from 'react-redux'
+import fetchVideosCategories from '../Redux/Actions/categories_action'
 
 import  '../Styles/_CategoriesBar.scss'
 
@@ -6,8 +8,12 @@ import  '../Styles/_CategoriesBar.scss'
 
 const CategoriesBar = () => {
     const [selected, setSelected] = useState("All")
+    const dispatch = useDispatch()
 
-    const handleClick = (value)=> setSelected(value)
+    const handleClick = (value)=> {
+        setSelected(value)
+        dispatch(fetchVideosCategories(value))
+    }
     const list = [
         "All",
         "Coding",

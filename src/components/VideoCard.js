@@ -30,9 +30,11 @@ const VideoCard = ({video}) => {
         }
     } = video
 
+    const videoId = id?.videoId || id
+
     useEffect(()=> {
         const fetchItems = async() => {
-            const {data:{items}} = await axios(`${baseUrl}${videoDetailsEndPoint}id=${id}&key=${process.env.REACT_APP_API_KEY_1}`)
+            const {data:{items}} = await axios(`${baseUrl}${videoDetailsEndPoint}id=${videoId}&key=${process.env.REACT_APP_API_KEY_1}`)
             console.log(items)
             const[data] = items
             
@@ -43,7 +45,7 @@ const VideoCard = ({video}) => {
         }
 
         fetchItems()    
-    }, [id])
+    }, [videoId])
     
     
     useEffect(()=> {
@@ -58,6 +60,10 @@ const VideoCard = ({video}) => {
 
         fetchChannel()    
     }, [channelId])
+    
+    
+    
+    
     return (
         <div className="video">
             <div className="video__top">
@@ -86,6 +92,7 @@ const VideoCard = ({video}) => {
 }
 
 export default VideoCard
+
 
 
 

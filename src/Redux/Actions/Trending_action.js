@@ -18,7 +18,8 @@ const fetchTrendingVideos = () => async dispatch => {
             type: POPULAR_VIDEOS_SUCCESS,
             payLoad: {
                 videos: items,
-                nextPageToken: nextPageToken
+                nextPageToken: nextPageToken,
+                category: "All"
             }
         })
         

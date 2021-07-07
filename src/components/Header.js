@@ -9,7 +9,7 @@ const Header = ({handleSidebar}) => {
 
     
     return (
-        <div className="border border-dark header">
+        <div className="header">
             <FaBars onClick={ ()=>{handleSidebar()}} className="header__menu" size={26}/>
             <img src="https://pngimg.com/uploads/youtube/youtube_PNG102354.png" alt="youtube logo" className="header__logo"/>
             <form>
