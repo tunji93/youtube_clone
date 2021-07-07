@@ -23,6 +23,17 @@
             padding: 0.2rem;
             border-radius: 3px;
         }
+        div {
+            display: flex;
+            flex-direction: column;
+            height: 2rem;
+            justify-content: space-between;
+            position: absolute;
+            right: 0.3rem;
+            top: 0.5rem;
+            color: #080808ec;
+        }
+
     }
     &__title {
         margin-bottom: 0.1rem;

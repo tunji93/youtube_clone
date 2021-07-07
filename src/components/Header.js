@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaBars } from 'react-icons/fa';
-import { MdNotifications,MdApps } from "react-icons/md"
+import { MdNotifications,MdApps} from "react-icons/md"
 import { AiOutlineSearch  } from "react-icons/ai"
 import '../Styles/_Header.scss'
 

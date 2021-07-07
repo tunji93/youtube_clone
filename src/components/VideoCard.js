@@ -1,13 +1,14 @@
 import React, { useEffect,useState } from 'react'
 import  '../Styles/_Videocard.scss'
 import { AiFillEye  } from "react-icons/ai"
+import {MdWatchLater,MdAddToQueue } from "react-icons/md"
 import axios from 'axios'
 import moment from 'moment'
 import numeral from 'numeral'
 import { baseUrl, channelEndPoint, videoDetailsEndPoint } from '../Api'
 
 const VideoCard = ({video}) => {
-
+    const [mouse, setMouse] = useState(false)
     const [views, setViews] = useState(null)
     const [duration, setDuration] = useState(null)
     const [channelImage, setChannelImage] = useState(null)
@@ -66,8 +67,14 @@ const VideoCard = ({video}) => {
     
     return (
         <div className="video">
-            <div className="video__top">
+            <div className="video__top" 
+            onMouseEnter={()=>{setMouse(true)}}
+            onMouseLeave ={()=>{setMouse(false)}}>
                 <img src={medium.url} alt="thumbnail" />
+                {mouse?<div>
+                    <MdWatchLater />
+                    <MdAddToQueue />
+                </div>: ''}
                 <span>{duration_}</span>
             </div>
             <div className="video__title">
