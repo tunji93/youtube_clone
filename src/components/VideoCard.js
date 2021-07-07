@@ -13,7 +13,7 @@ const VideoCard = ({video}) => {
     const [channelImage, setChannelImage] = useState(null)
 
     const seconds = moment.duration(duration).asSeconds()
-    const duration_ = moment.utc(seconds*1000).format('ms:ss')
+    const duration_ = moment.utc(seconds*1000).format('HH:mm')
 
     const views_ = numeral(views).format('0.a')
     
